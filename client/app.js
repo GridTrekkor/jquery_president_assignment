@@ -28,11 +28,13 @@ $(document).ready(function() {
             var masterArray = dArray.concat(rArray);
 
             $("#peopleButton").click(function() {
+                $("#peopleUL").empty();
                 var j = 0;
                 while (j < masterArray.length) {
                     $("#peopleUL").append("<li>" + masterArray[j] + "</li>");
                     j++;
                 }
+                $("#peopleUL").fadeIn(200);
                 $("#winnerButton").show().click(function() {
                     $("#winnerLI").fadeIn(200).html("Winner: " + masterArray[getRandomInt(0, (masterArray.length - 1))]);
                 });
