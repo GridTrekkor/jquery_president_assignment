@@ -11,7 +11,7 @@ $(document).ready(function() {
 
         var i = 0;
         while (i < D_data.length) {
-            dArray.push((D_data[i].FIELD1 + " " + D_data[i].FIELD2));
+            dArray.push("<span style='color:#00F'>" + D_data[i].FIELD1 + " " + D_data[i].FIELD2 + "</span>");
             i++;
         }
 
@@ -19,9 +19,9 @@ $(document).ready(function() {
             url: "/R.json"
         }).done(function(R_data) {
 
-            var i = 0;
+            i = 0;
             while (i < R_data.length) {
-                rArray.push((R_data[i].FIELD1 + " " + R_data[i].FIELD2));
+                rArray.push("<span style='color:#F00'>" + R_data[i].FIELD1 + " " + R_data[i].FIELD2 + "</span>");
                 i++;
             }
 
@@ -34,7 +34,7 @@ $(document).ready(function() {
                     j++;
                 }
                 $("#winnerButton").show().click(function() {
-                    $("#winnerLI").show().text("Winner: " + masterArray[getRandomInt(0, (masterArray.length - 1))]);
+                    $("#winnerLI").fadeIn(200).html("Winner: " + masterArray[getRandomInt(0, (masterArray.length - 1))]);
                 });
 
             });
