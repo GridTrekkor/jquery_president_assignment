@@ -2,8 +2,7 @@
 
 $(document).ready(function() {
 
-    var dArray = [];
-    var rArray = [];
+    var dArray = [], rArray = [];
 
     $.ajax({
         url: "/D.json"
@@ -38,6 +37,7 @@ $(document).ready(function() {
                 $("#winnerButton").show().click(function() {
                     $("#winnerLI").fadeIn(200).html("Winner: " + masterArray[getRandomInt(0, (masterArray.length - 1))]);
                 });
+                $("#peopleButton").hide();
 
             });
 
